@@ -15,8 +15,8 @@ namespace ConsoleApp1
 
             Operations.Transaction(acc, acc2, 500);
             
-            Operations.Witdraw(acc, 600);
-
+            Operations.Withdraw(acc, 600);
+            Operations.Deposit(acc, 800, 4);
             
         }
     }

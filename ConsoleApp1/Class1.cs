@@ -23,22 +23,31 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("You cannot transaction money");
             }
-            System.Console.WriteLine("Balance of first account:" + accountSeller.Balance + ' ' + "Balance of second account:" + accountGetter.Balance);
+            System.Console.WriteLine("Balance of first account: " + accountSeller.Balance + " Balance of second account: " + accountGetter.Balance);
         }
 
-        public static void Witdraw(Account account, double sum)
+        public static void Withdraw(Account account, double sum)
         {
             if (sum % 1 > 1)
             {
                 account.Balance -= sum;
-                System.Console.WriteLine("Witdraw of" + ' ' + sum + ' ' + "complete");
-                System.Console.WriteLine("New Balance:" + ' ' + account.Balance);
+                System.Console.WriteLine("Witdraw of "+ sum + " complete");
+                System.Console.WriteLine("New Balance: " + account.Balance);
             }
             else
             {
                 Console.WriteLine("Error");
             }
         }
+
+        public static void Deposit(Account account, double sum, int monthCount)
+        {
+            account.Rate = 0.057;
+            account.Balance = (sum * account.Rate/12) * monthCount + sum;
+            System.Console.WriteLine("New Balance: " + account.Balance);
+        }
+
+        public static void Credit()
 
 
     }
